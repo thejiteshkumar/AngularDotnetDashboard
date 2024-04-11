@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularDashboardSPA.Server", "AngularDashboardSPA.Server\AngularDashboardSPA.Server.csproj", "{BA4E203C-6FA7-4C03-8946-8A8355D9A6D4}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "angulardashboardspa.client", "angulardashboardspa.client\angulardashboardspa.client.esproj", "{ECE97B28-F28C-4835-A5C7-4FA8015D7E59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA4E203C-6FA7-4C03-8946-8A8355D9A6D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA4E203C-6FA7-4C03-8946-8A8355D9A6D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA4E203C-6FA7-4C03-8946-8A8355D9A6D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA4E203C-6FA7-4C03-8946-8A8355D9A6D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECE97B28-F28C-4835-A5C7-4FA8015D7E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECE97B28-F28C-4835-A5C7-4FA8015D7E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECE97B28-F28C-4835-A5C7-4FA8015D7E59}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{ECE97B28-F28C-4835-A5C7-4FA8015D7E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECE97B28-F28C-4835-A5C7-4FA8015D7E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECE97B28-F28C-4835-A5C7-4FA8015D7E59}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F71DFAA8-5086-4E94-A5FA-43C912202DDB}
+	EndGlobalSection
+EndGlobal

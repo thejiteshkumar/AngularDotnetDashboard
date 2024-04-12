@@ -1,3 +1,7 @@
+using AngularDashboardSPA.Server.Filters;
+using AngularDashboardSPA.Service;
+using Serilog;
+
 namespace AngularDashboardSPA.Server
 {
     public class Program
@@ -6,22 +10,32 @@ namespace AngularDashboardSPA.Server
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers(option =>
+            {
+                option.Filters.Add<ApiResponseFilters>();
+            });
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddServices();
+
+            builder.Host.UseSerilog((context, configuration) =>
+            {
+                configuration.ReadFrom.Configuration(context.Configuration);
+            });
 
             var app = builder.Build();
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
 
+            app.UseSerilogRequestLogging();
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

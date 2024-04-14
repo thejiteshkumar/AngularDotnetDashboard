@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularDashboardSPA.Server"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "angulardashboardspa.client", "angulardashboardspa.client\angulardashboardspa.client.esproj", "{ECE97B28-F28C-4835-A5C7-4FA8015D7E59}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularDashboardSPA.Common", "AngularDashboardSPA.Repository\AngularDashboardSPA.Common.csproj", "{99AF82F9-C6DB-4BB5-9492-2A77E764C268}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularDashboardSPA.Service", "AngularDashboardSPA.Service\AngularDashboardSPA.Service.csproj", "{C0A5AB82-0D29-4F6B-AD96-B414FEEAD636}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularDashboardSPA.DAL", "AngularDashboardSPA.DAL\AngularDashboardSPA.DAL.csproj", "{893AC0B9-2453-4532-9877-6E17A33EC4F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularDashboardSPA.Common", "AngularDashboardSPA.Common\AngularDashboardSPA.Common.csproj", "{04885DC3-CBF5-4FA2-B518-FC36C784ACE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		{ECE97B28-F28C-4835-A5C7-4FA8015D7E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECE97B28-F28C-4835-A5C7-4FA8015D7E59}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ECE97B28-F28C-4835-A5C7-4FA8015D7E59}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{99AF82F9-C6DB-4BB5-9492-2A77E764C268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99AF82F9-C6DB-4BB5-9492-2A77E764C268}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99AF82F9-C6DB-4BB5-9492-2A77E764C268}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99AF82F9-C6DB-4BB5-9492-2A77E764C268}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C0A5AB82-0D29-4F6B-AD96-B414FEEAD636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C0A5AB82-0D29-4F6B-AD96-B414FEEAD636}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0A5AB82-0D29-4F6B-AD96-B414FEEAD636}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +37,10 @@ Global
 		{893AC0B9-2453-4532-9877-6E17A33EC4F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{893AC0B9-2453-4532-9877-6E17A33EC4F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{893AC0B9-2453-4532-9877-6E17A33EC4F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04885DC3-CBF5-4FA2-B518-FC36C784ACE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04885DC3-CBF5-4FA2-B518-FC36C784ACE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04885DC3-CBF5-4FA2-B518-FC36C784ACE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04885DC3-CBF5-4FA2-B518-FC36C784ACE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

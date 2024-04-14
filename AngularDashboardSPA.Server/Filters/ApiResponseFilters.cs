@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FluentValidation.Results;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace AngularDashboardSPA.Server.Filters
@@ -35,6 +36,12 @@ namespace AngularDashboardSPA.Server.Filters
                 {
                     StatusCode = apiResponse.StatusCode
                 };
+
+                if (apiResponse.Data is not null && apiResponse.Data is ValidationResult)
+                {
+                    var validate = apiResponse.Data as ValidationResult;
+                    apiResponse.Data = validate?.Errors.Select(x => new { x.PropertyName, x.ErrorMessage });
+                }
 
             }
             else if (context.Result is StatusCodeResult statusCodeResult)

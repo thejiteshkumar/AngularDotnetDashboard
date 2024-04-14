@@ -18,15 +18,24 @@ namespace AngularDashboardSPA.Server.Filters
             {
                 var apiResponse = new ApiResponse<object>
                 {
-                    Status = "Success",
                     StatusCode = objectResult.StatusCode ?? StatusCodes.Status200OK,
                     Data = objectResult.Value
                 };
+
+                if (IsErrorStatusCode(apiResponse.StatusCode))
+                {
+                    apiResponse.Status = "Error";
+                }
+                else
+                {
+                    apiResponse.Status = "Success";
+                }
 
                 context.Result = new ObjectResult(apiResponse)
                 {
                     StatusCode = apiResponse.StatusCode
                 };
+
             }
             else if (context.Result is StatusCodeResult statusCodeResult)
             {
@@ -67,6 +76,13 @@ namespace AngularDashboardSPA.Server.Filters
 
             //NOTE : Marking the exception as handled, 
             context.ExceptionHandled = true;
+        }
+
+
+        private bool IsErrorStatusCode(int statusCode)
+        {
+            // Any status code 400 or above is considered an error
+            return statusCode >= 400;
         }
     }
 }

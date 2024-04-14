@@ -30,7 +30,6 @@ namespace AngularDashboardSPA.Server
                .AddEntityFrameworkStores<ApplicationDbContext>()
                .AddDefaultTokenProviders();
 
-
             _ = builder.Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

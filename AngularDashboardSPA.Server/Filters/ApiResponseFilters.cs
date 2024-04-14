@@ -42,7 +42,6 @@ namespace AngularDashboardSPA.Server.Filters
                     var validate = apiResponse.Data as ValidationResult;
                     apiResponse.Data = validate?.Errors.Select(x => new { x.PropertyName, x.ErrorMessage });
                 }
-
             }
             else if (context.Result is StatusCodeResult statusCodeResult)
             {
@@ -81,10 +80,9 @@ namespace AngularDashboardSPA.Server.Filters
                 StatusCode = StatusCodes.Status500InternalServerError
             };
 
-            //NOTE : Marking the exception as handled, 
+            //NOTE : Marking the exception as handled,
             context.ExceptionHandled = true;
         }
-
 
         private bool IsErrorStatusCode(int statusCode)
         {

@@ -75,7 +75,7 @@ namespace AngularDashboardSPA.Service.Auth
         public async Task<ServiceResponse<RegisterDTO>> Register(RegisterDTO model)
         {
             var response = new ServiceResponse<RegisterDTO>();
-            var userExists = await userManager.FindByNameAsync(model.Username);
+            var userExists = await userManager.FindByEmailAsync(model.Username);
 
             if (userExists != null)
             {
@@ -94,6 +94,37 @@ namespace AngularDashboardSPA.Service.Auth
             if (!result.Succeeded)
             {
                 response.ErrorMessage = "User creation failed! Please check user details and try again.";
+            }
+
+            return response;
+        }
+
+        public async Task<ServiceResponse<object>> CreateAdmin(CreateAdminDTO model)
+        {
+            var response = new ServiceResponse<object>();
+
+            var user = await userManager.FindByEmailAsync(model.Email);
+
+            if (user == null)
+            {
+                response.ErrorMessage = "Admin privileges can only be assigned to existing users.";
+                return response;
+            }
+
+            if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
+                await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+
+            if (!await roleManager.RoleExistsAsync(UserRoles.User))
+                await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+
+            var result = await userManager.AddToRoleAsync(user, UserRoles.Admin);
+
+            if (result.Succeeded)
+            {
+                response.Data = new
+                {
+                    Message = $"User {user.Email} promoted to Admin"
+                };
             }
 
             return response;

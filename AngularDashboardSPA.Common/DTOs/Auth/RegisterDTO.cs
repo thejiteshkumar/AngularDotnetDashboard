@@ -13,4 +13,12 @@ namespace AngularDashboardSPA.Common.DTOs.Auth
         [Required]
         public string? Password { get; set; }
     }
+
+    public record CreateAdminDTO
+    {
+        public Guid? Id { get; set; }
+
+        [Required]
+        public string? Email { get; set; }
+    }
 }

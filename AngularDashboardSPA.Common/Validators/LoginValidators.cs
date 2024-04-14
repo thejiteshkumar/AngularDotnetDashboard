@@ -10,7 +10,6 @@ namespace AngularDashboardSPA.Common.Validators
             RuleFor(x => x.Email).NotEmpty().EmailAddress();
             RuleFor(x => x.Password).NotEmpty();
         }
-
     }
 
     public class RegisterValidators : AbstractValidator<RegisterDTO>
@@ -23,6 +22,14 @@ namespace AngularDashboardSPA.Common.Validators
                 .NotEmpty()
                 .MinimumLength(4)
                 .MaximumLength(15);
+        }
+    }
+
+    public class CreateAdminValidators : AbstractValidator<CreateAdminDTO>
+    {
+        public CreateAdminValidators()
+        {
+            RuleFor(x => x.Email).NotEmpty().EmailAddress();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace AngularDashboardSPA.Service
         {
             services.AddTransient<IValidator<LoginDTO>, LoginValidators>();
             services.AddTransient<IValidator<RegisterDTO>, RegisterValidators>();
+            services.AddTransient<IValidator<CreateAdminDTO>, CreateAdminValidators>();
         }
     }
 }

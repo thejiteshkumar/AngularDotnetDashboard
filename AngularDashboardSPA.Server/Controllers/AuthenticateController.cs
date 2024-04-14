@@ -2,6 +2,7 @@
 using AngularDashboardSPA.Common.ServiceModels;
 using AngularDashboardSPA.Common.Validators;
 using AngularDashboardSPA.Service.Auth;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -9,6 +10,7 @@ namespace AngularDashboardSPA.Server.Controllers
 {
     [Route("api/auth/")]
     [ApiController]
+    [Authorize]
     public class AuthenticateController : ControllerBase
     {
         private IAuthService authService;
@@ -19,6 +21,7 @@ namespace AngularDashboardSPA.Server.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [Route("login")]
         [SwaggerResponse(200, Type = typeof(ServiceResponse<LoginResponseDTO>))]
         public async Task<IActionResult> Login(LoginDTO model)
@@ -49,6 +52,7 @@ namespace AngularDashboardSPA.Server.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [Route("register")]
         [SwaggerResponse(200, Type = typeof(ServiceResponse<RegisterDTO>))]
         public async Task<IActionResult> Register(RegisterDTO model)
@@ -75,5 +79,30 @@ namespace AngularDashboardSPA.Server.Controllers
             catch (Exception) { throw; }
         }
 
+        [HttpPost]
+        [Route("create-admin")]
+        public async Task<IActionResult> RegisterAdmin(CreateAdminDTO model)
+        {
+            try
+            {
+                var validator = new CreateAdminValidators();
+                var validationResult = validator.Validate(model);
+
+                if (!validationResult.IsValid)
+                {
+                    return BadRequest(validationResult);
+                }
+
+                var response = await authService.CreateAdmin(model);
+
+                if (!response.IsSuccess)
+                {
+                    return BadRequest(response);
+                }
+
+                return Ok(response);
+            }
+            catch (Exception) { throw; }
+        }
     }
 }

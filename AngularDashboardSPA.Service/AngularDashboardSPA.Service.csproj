@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AngularDashboardSPA.Common\AngularDashboardSPA.Common.csproj" />
     <ProjectReference Include="..\AngularDashboardSPA.DAL\AngularDashboardSPA.DAL.csproj" />
-    <ProjectReference Include="..\AngularDashboardSPA.Repository\AngularDashboardSPA.Common.csproj" />
   </ItemGroup>
 
 </Project>

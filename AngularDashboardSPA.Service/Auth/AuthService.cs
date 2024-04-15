@@ -107,7 +107,7 @@ namespace AngularDashboardSPA.Service.Auth
 
             if (user == null)
             {
-                response.ErrorMessage = "Admin privileges can only be assigned to existing users.";
+                response.ErrorMessage = "Administrator privileges can only be assigned to existing users.";
                 return response;
             }
 
@@ -123,7 +123,7 @@ namespace AngularDashboardSPA.Service.Auth
             {
                 response.Data = new
                 {
-                    Message = $"User {user.Email} promoted to Admin"
+                    Message = $"User {user.Email} promoted to Administrator."
                 };
             }
 

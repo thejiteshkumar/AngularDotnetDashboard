@@ -4,6 +4,7 @@ using AngularDashboardSPA.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AngularDashboardSPA.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240415184107_Seeding Users")]
+    partial class SeedingUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,13 +94,13 @@ namespace AngularDashboardSPA.DAL.Migrations
                         {
                             Id = "7678a184-58b5-4904-a582-f62c06adfe8f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "70767349-bf60-46f4-bb8f-b5bddb139470",
+                            ConcurrencyStamp = "6412e2c8-c730-45b3-96e1-7eb9b2a1490e",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAGlApzEsTnqODmldnaGonePTl+Vqntnf2LoQeWGctJhxaXNH8mPQ0v6V/pnaHJWgA==",
+                            NormalizedUserName = "Admin",
+                            PasswordHash = "AQAAAAIAAYagAAAAENQOO24bS5ikMabluD1SZm+RLmL4dMxnPO+O8s6JUwRGmIrram/fp9SDXJOFac7wZg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "938e3ef6-fe11-4c34-af40-478218a4d170",
+                            SecurityStamp = "7a0373d3-c1e0-49bf-a438-5c94c2300220",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });

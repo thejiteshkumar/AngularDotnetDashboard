@@ -1,6 +1,10 @@
 ﻿namespace AngularDashboardSPA.Common.ExceptionExtension
 {
-    public class LoginException : Exception
+    public class InputErrorException : Exception
     {
+        public InputErrorException(IEnumerable<object> list)
+        {
+
+        }
     }
 }

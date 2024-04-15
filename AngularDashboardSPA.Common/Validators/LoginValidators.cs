@@ -7,7 +7,7 @@ namespace AngularDashboardSPA.Common.Validators
     {
         public LoginValidators()
         {
-            RuleFor(x => x.Email).NotEmpty().EmailAddress();
+            RuleFor(x => x.EmailOrUserName).NotEmpty();
             RuleFor(x => x.Password).NotEmpty();
         }
     }

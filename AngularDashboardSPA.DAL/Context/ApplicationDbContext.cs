@@ -30,6 +30,8 @@ namespace AngularDashboardSPA.DAL.Context
                     Id = "7678a184-58b5-4904-a582-f62c06adfe8f",
                     UserName = "Admin",
                     NormalizedUserName = "ADMIN",
+                    Email = "admin@stormblessed.com",
+                    NormalizedEmail = "ADMIN@STORMBLESSED.COM",
                     PasswordHash = hasher.HashPassword(null, "1tw*B@t*81$7Z9#%%75#!E27$Lw^fE")
                 }
             );

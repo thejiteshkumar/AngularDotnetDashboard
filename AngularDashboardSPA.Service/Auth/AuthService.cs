@@ -31,7 +31,18 @@ namespace AngularDashboardSPA.Service.Auth
         {
             var response = new ServiceResponse<LoginResponseDTO>();
 
-            var user = await userManager.FindByEmailAsync(model.Email);
+            User? user = null;
+
+            if (IsEmail(model.EmailOrUserName))
+            {
+                user = await userManager.FindByEmailAsync(model.EmailOrUserName);
+
+            }
+            else
+            {
+                user = await userManager.FindByNameAsync(model.EmailOrUserName);
+            }
+
             if (user != null && await userManager.CheckPasswordAsync(user, model.Password))
             {
                 var userRoles = await userManager.GetRolesAsync(user);
@@ -93,7 +104,7 @@ namespace AngularDashboardSPA.Service.Auth
 
             if (!result.Succeeded)
             {
-                response.ErrorMessage = "User creation failed! Please check user details and try again.";
+                response.ErrorMessage = result.Errors?.FirstOrDefault()?.Description ?? "User creation failed! Please check user details and try again.";
             }
 
             return response;
@@ -128,6 +139,11 @@ namespace AngularDashboardSPA.Service.Auth
             }
 
             return response;
+        }
+
+        private bool IsEmail(string email)
+        {
+            return email.Contains('@');
         }
     }
 }

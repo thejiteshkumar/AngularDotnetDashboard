@@ -1,16 +1,39 @@
 <app-header></app-header>
-<div
-  class="d-flex align-items-center justify-content-center"
-  style="height: 80vh"
->
+<div class="d-flex align-items-center justify-content-center h-75">
   <p-card
     header="Sign In"
-    subheader="Card Subheader"
-    [style]="{ width: '360px' }"
+    subheader="We complete your journey"
+    class="col-md-3"
   >
-    <span class="p-float-label">
-      <input pInputText id="username" class="w-100"/>
-      <label for="username">Username</label>
-    </span>
+    <div class="mb-2 mt-2">
+      <span class="p-float-label">
+        <input pInputText id="username" class="w-100" />
+        <label for="username">Email</label>
+      </span>
+    </div>
+    <br />
+    <div>
+      <span class="p-float-label">
+        <input pInputText id="username" class="w-100" />
+        <label for="username">Password</label>
+      </span>
+    </div>
+    <br />
+    <p-button
+      styleClass="w-100 mt-2 rounded-5"
+      label="Sign In"
+      [loading]="loading"
+      loadingIcon="pi pi-angle-double-left"
+      (onClick)="signIn()"
+    ></p-button>
+    <br />
+    <div class="mt-4">
+      <p-button
+        styleClass="w-100 mt-2 rounded-5"
+        label="Continue with Google"
+        icon="pi pi-google"
+        iconPos="left"
+      ></p-button>
+    </div>
   </p-card>
 </div>

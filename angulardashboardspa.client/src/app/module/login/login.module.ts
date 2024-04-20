@@ -6,6 +6,8 @@ import { HeaderComponent } from '../header/header.component';
 import { ToolbarModule } from 'primeng/toolbar';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { FormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [LoginComponent, HeaderComponent],
@@ -15,6 +17,8 @@ import { FormsModule } from '@angular/forms';
     ToolbarModule,
     InputSwitchModule,
     FormsModule,
+    InputTextModule,
+    ButtonModule,
   ],
 })
 export class LoginModule {}

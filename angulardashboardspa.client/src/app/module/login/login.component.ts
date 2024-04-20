@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
+  loading: boolean = false;
+  signIn() {
+    this.loading = true;
 
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000);
+  }
 }

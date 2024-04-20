@@ -1,7 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 
 app-root {
     display: block;
     height: 100vh;
+}
+
+.main-body-light{
+    background: white;
+    color: black;
+}
+
+.main-body-dark{
+    background: #222831;
+    color: white;
 }

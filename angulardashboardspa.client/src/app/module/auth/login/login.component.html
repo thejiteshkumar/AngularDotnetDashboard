@@ -1,21 +1,30 @@
 <app-header></app-header>
 <div class="d-flex align-items-center justify-content-center h-75">
   <p-card
-    header="Sign In"
+    header="Sign in"
     subheader="We complete your journey"
     class="col-md-3"
   >
     <div class="mb-2 mt-2">
       <span class="p-float-label">
-        <input pInputText id="username" class="w-100" />
-        <label for="username">Email</label>
+        <input pInputText id="email" class="w-100" />
+        <label for="email">Email</label>
       </span>
     </div>
     <br />
     <div>
       <span class="p-float-label">
-        <input pInputText id="username" class="w-100" />
-        <label for="username">Password</label>
+        <p-password
+          type="password"
+          class="w-full"
+          [feedback]="false"
+          styleClass="p-password p-component p-inputwrapper p-input-icon-right"
+          [style]="{ width: '100%' }"
+          [inputStyle]="{ width: '100%' }"
+          [toggleMask]="true"
+          [(ngModel)]="password"
+        ></p-password>
+        <label for="password">Password</label>
       </span>
     </div>
     <br />
@@ -36,4 +45,7 @@
       ></p-button>
     </div>
   </p-card>
+</div>
+<div class="d-flex align-items-center justify-content-center">
+  <span class="SMN_effect-15">New here? <a href="">Join now</a> </span>
 </div>

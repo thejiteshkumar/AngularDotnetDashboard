@@ -31,7 +31,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.css",
-
+              "src/custom-style.css",
               {
                 "input": "node_modules/primeng/resources/themes/lara-dark-indigo/theme.css",
                 "bundleName": "mode-dark",

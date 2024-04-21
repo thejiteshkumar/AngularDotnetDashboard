@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   loading: boolean = false;
+  password: string = "";
   signIn() {
     this.loading = true;
 

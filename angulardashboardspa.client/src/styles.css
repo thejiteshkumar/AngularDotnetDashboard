@@ -16,3 +16,19 @@ app-root {
     background: #222831;
     color: white;
 }
+
+.moon-light{
+    color: #D6DAC8;
+}
+
+.moon-dark{
+    color: violet;
+}
+
+.sun-light{
+    color: #ED9455;
+}
+
+.sun-dark{
+    color: grey;
+}

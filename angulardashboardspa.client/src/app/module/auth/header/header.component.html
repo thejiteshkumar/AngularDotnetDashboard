@@ -1,11 +1,11 @@
 <div class="d-flex p-3 justify-content-between">
   <div class="align-items-center"><h3>Icon</h3></div>
   <div class="d-flex justify-content-evenly">
-    <i class="pi pi-sun pe-3 pb-2"></i>
+    <i class="pi pi-sun pe-3 pb-2" id="sun-icon"></i>
     <p-inputSwitch
       [(ngModel)]="checked"
       (click)="onThemeChange(checked ? 'mode-dark' : 'mode-light')"
     ></p-inputSwitch>
-    <i class="pi pi-moon ps-3 pb-2"></i>
+    <i class="pi pi-moon ps-3 pb-2" id="moon-icon"></i>
   </div>
 </div>

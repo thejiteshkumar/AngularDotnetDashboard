@@ -1,4 +1,3 @@
-import { HtmlTagDefinition } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { ThemeConstant } from '../constants/themeConstant';
 
@@ -7,8 +6,6 @@ import { ThemeConstant } from '../constants/themeConstant';
 })
 export class ThemeService {
   activeTheme: string = ThemeConstant.ActiveTheme;
-  // darkTheme: string = 'main-body-dark';
-  // lightTheme: string = 'main-body-light';
 
   getTheme() {
     return this.activeTheme;

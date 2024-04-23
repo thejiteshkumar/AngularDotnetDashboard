@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginModule } from './module/auth/login/login.module';
 import { SignupModule } from './module/auth/signup/signup.module';
+import { HeaderModule } from './module/auth/header/header.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import { SignupModule } from './module/auth/signup/signup.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    HeaderModule,
     LoginModule,
     SignupModule,
     BrowserAnimationsModule,

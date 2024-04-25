@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { ThemeConstant } from '../constants/themeConstant';
+import { ThemeConstant } from '../../constants/themeConstant';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  activeTheme: string = ThemeConstant.ActiveTheme;
+  activeTheme: string = ThemeConstant.ModeDark;
 
   getTheme() {
     return this.activeTheme;
@@ -23,11 +23,10 @@ export class ThemeService {
 
       sunIcon.classList.add(ThemeConstant.SunDark);
       moonIcon.classList.add(ThemeConstant.MoonDark);
-    }
-    else {
+    } else {
       appRoot[0].classList.remove(ThemeConstant.DarkTheme);
       appRoot[0].classList.add(ThemeConstant.LightTheme);
-      
+
       //Removing light theme
       sunIcon.classList.remove(ThemeConstant.SunDark);
       moonIcon.classList.remove(ThemeConstant.MoonDark);
@@ -35,7 +34,6 @@ export class ThemeService {
       //Adding dark theme
       sunIcon.classList.add(ThemeConstant.SunLight);
       moonIcon.classList.add(ThemeConstant.MoonLight);
-
     }
     if (themeLink) {
       themeLink.href = theme + '.css';
@@ -43,7 +41,6 @@ export class ThemeService {
 
     this.activeTheme = theme;
   }
-
 }
 
 

@@ -1,7 +1,7 @@
 <app-header></app-header>
 
-<ng-container *ngIf="!chooseUsername; else usernameTemplate">
-  <div class="d-flex align-items-center justify-content-center h-75">
+<ng-container *ngIf="!chooseUsername; else usernameTemplate" >
+  <div class="d-flex align-items-center justify-content-center h-75" >
     <p-card header="Sign up" subheader="We complete your journey" class="col-md-3">
       <div class="mb-2 mt-2">
         <span class="p-float-label">
@@ -20,7 +20,7 @@
       </div>
       <br />
       <p-button styleClass="w-100 mt-2 rounded-5" label="Start your journey.." [loading]="loading"
-        loadingIcon="pi pi-angle-double-left" (onClick)="createUsername()"></p-button>
+        loadingIcon="pi pi-angle-double-left" (onClick)="signUp()"></p-button>
       <br />
       <div class="mt-4">
         <p-button styleClass="w-100 mt-2 rounded-5" label="Continue with Google" icon="pi pi-google"
@@ -35,8 +35,8 @@
 </ng-container>
 
 <ng-template #usernameTemplate>
-  <div class="d-flex align-items-center justify-content-center h-75">
-    <p-card header="Create a Username" class="col-md-3">
+  <div class="d-flex align-items-center justify-content-center h-75" >
+    <p-card header="Create a Username" class="col-md-3" [@slideAndFade]>
       <div class="mb-2 mt-2">
         <span class="p-float-label">
           <input pInputText id="username" class="w-100" />
@@ -45,7 +45,7 @@
       </div>
       <br />
       <p-button styleClass="w-100 mt-2 rounded-5" label="Start your journey.." [loading]="loading"
-        loadingIcon="pi pi-angle-double-left" (onClick)="signUp()"></p-button>
+        loadingIcon="pi pi-angle-double-left" (onClick)="createUsername()"></p-button>
     </p-card>
   </div>
 </ng-template>

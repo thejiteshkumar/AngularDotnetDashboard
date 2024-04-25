@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ThemeService } from '../../../services/theme.service';
+import { ThemeConstant } from '../../../constants/themeConstant';
+import { ThemeService } from '../../../services/theme/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -7,17 +8,23 @@ import { ThemeService } from '../../../services/theme.service';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent implements OnInit {
-  
-  checked: boolean = true;
-  selectedTheme: string = 'mode-dark';
+  selectedTheme: string =
+    localStorage.getItem('theme') ?? ThemeConstant.ModeDark;
+
+  checked: boolean =
+    localStorage.getItem('theme') == ThemeConstant.ModeDark ? true : false;
+
   themService: ThemeService = inject(ThemeService);
 
   ngOnInit(): void {
     this.themService.setTheme(this.selectedTheme);
   }
 
-  onThemeChange(theme: string): void{
+  onThemeChange(theme: string): void {
     this.selectedTheme = theme;
+
     this.themService.setTheme(theme);
+
+    localStorage.setItem('theme', theme);
   }
 }

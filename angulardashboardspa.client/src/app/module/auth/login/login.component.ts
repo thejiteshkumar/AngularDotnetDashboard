@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,12 +8,25 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   loading: boolean = false;
-  password: string = "";
-  signIn() {
-    this.loading = true;
 
-    setTimeout(() => {
-      this.loading = false;
-    }, 2000);
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required , Validators.minLength(6)]),
+  });
+
+  signIn() {
+    if (this.loginForm.valid) {
+      this.loading = true;
+
+      console.log(this.loginForm);
+
+      setTimeout(() => {
+        this.loading = false;
+      }, 2000);
+    } else {
+      // Handle form validation errors
+      // Mark all fields as touched to display validation messages
+      this.loginForm.markAllAsTouched();
+    }
   }
 }

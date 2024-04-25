@@ -1,5 +1,5 @@
 export enum ThemeConstant {
-  ActiveTheme = 'mode-dark',
+  ModeDark = 'mode-dark',
   DarkTheme = 'main-body-dark',
   LightTheme = 'main-body-light',
   SunLight = 'sun-light',

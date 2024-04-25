@@ -1,48 +1,28 @@
 <app-header></app-header>
 <div class="d-flex align-items-center justify-content-center h-75">
-  <p-card
-    header="Sign in"
-    subheader="We complete your journey"
-    class="col-md-3"
-  >
-    <div class="mb-2 mt-2">
+  <p-card header="Sign in" subheader="We complete your journey" class="col-md-3">
+    <form [formGroup]="loginForm">
+      <div class="mb-2 mt-2">
+        <span class="p-float-label">
+          <input pInputText id="email" formControlName="email" class="w-100" />
+          <label for="email">Email</label>
+        </span>
+      </div>
+      <br />
       <span class="p-float-label">
-        <input pInputText id="email" class="w-100" />
-        <label for="email">Email</label>
-      </span>
-    </div>
-    <br />
-    <div>
-      <span class="p-float-label">
-        <p-password
-          type="password"
-          class="w-full"
-          [feedback]="false"
-          styleClass="p-password p-component p-inputwrapper p-input-icon-right"
-          [style]="{ width: '100%' }"
-          [inputStyle]="{ width: '100%' }"
-          [toggleMask]="true"
-          [(ngModel)]="password"
-        ></p-password>
+        <p-password formControlName="password" type="password" class="w-full" [feedback]="false"
+          styleClass="p-password p-component p-inputwrapper p-input-icon-right" [style]="{ width: '100%' }"
+          [inputStyle]="{ width: '100%' }" [toggleMask]="true"></p-password>
         <label for="password">Password</label>
       </span>
-    </div>
+    </form>
     <br />
-    <p-button
-      styleClass="w-100 mt-2 rounded-5"
-      label="Resume your journey.."
-      [loading]="loading"
-      loadingIcon="pi pi-angle-double-left"
-      (onClick)="signIn()"
-    ></p-button>
+    <p-button styleClass="w-100 mt-2 rounded-5" label="Resume your journey.." [loading]="loading"
+      loadingIcon="pi pi-angle-double-left" (onClick)="signIn()"></p-button>
     <br />
     <div class="mt-4">
-      <p-button
-        styleClass="w-100 mt-2 rounded-5"
-        label="Continue with Google"
-        icon="pi pi-google"
-        iconPos="left"
-      ></p-button>
+      <p-button styleClass="w-100 mt-2 rounded-5" label="Continue with Google" icon="pi pi-google"
+        iconPos="left"></p-button>
     </div>
   </p-card>
 </div>

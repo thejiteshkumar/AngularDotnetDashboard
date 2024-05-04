@@ -23,6 +23,16 @@ namespace AngularDashboardSPA.Server
                 option.Filters.Add<ApiResponseFilters>();
             });
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                });
+            });
+
             var Configuration = builder.Configuration;
 
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Conn")));
@@ -106,6 +116,8 @@ namespace AngularDashboardSPA.Server
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors("AllowAll");
 
             app.UseSerilogRequestLogging();
             app.UseHttpsRedirection();
